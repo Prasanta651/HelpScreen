@@ -9,6 +9,19 @@ class Helpscreen extends StatefulWidget {
 }
 
 class _HelpscreenState extends State<Helpscreen> {
+  List<String> questions = [
+    'Where can i find list of all the buses?',
+    'Where can i find list of all the routes?',
+    'Where can i find of all the stops?',
+    'How can i search a bus for my desired destination?'
+  ];
+  List<String> answers = [
+    'Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de',
+    'Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de',
+    'Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de',
+    'Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de',
+  ];
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -91,7 +104,7 @@ class _HelpscreenState extends State<Helpscreen> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Container(
-                                  padding: EdgeInsets.all(10),
+                                  padding: EdgeInsets.all(8),
                                   child: const Text(
                                     'Get in touch with us',
                                     style: TextStyle(
@@ -102,7 +115,7 @@ class _HelpscreenState extends State<Helpscreen> {
                                 ),
                                 Card(
                                   child: Padding(
-                                    padding: EdgeInsets.all(15),
+                                    padding: EdgeInsets.all(8),
                                     child: Column(
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
@@ -127,24 +140,24 @@ class _HelpscreenState extends State<Helpscreen> {
                                           height: 10,
                                         ),
                                         /*InkWell(
-                                          child: Text(
-                                            'help@zatri.com',
-                                            style: TextStyle(
-                                              color: Colors.blueAccent,
+                                            child: Text(
+                                              'help@zatri.com',
+                                              style: TextStyle(
+                                                color: Colors.blueAccent,
+                                              ),
                                             ),
-                                          ),
-                                          onTap: () => launch('help@zatri.com'),
-                                        ),*/
+                                            onTap: () => launch('help@zatri.com'),
+                                          ),*/
                                         GestureDetector(
                                           child: Text(
-                                            'help@zatri.com',
+                                            'contact@zatri.in',
                                             style: TextStyle(
                                                 decoration:
                                                     TextDecoration.underline,
                                                 color: Colors.blue),
                                           ),
                                           onTap: () async {
-                                            const url1 = 'help@zatri.com';
+                                            const url1 = 'contact@zatri.in';
                                             if (await canLaunch(url1))
                                               launch(url1);
                                           },
@@ -155,7 +168,7 @@ class _HelpscreenState extends State<Helpscreen> {
                                 ),
                                 Card(
                                   child: Padding(
-                                    padding: EdgeInsets.all(15),
+                                    padding: EdgeInsets.all(8),
                                     child: Column(
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
@@ -179,14 +192,14 @@ class _HelpscreenState extends State<Helpscreen> {
                                         SizedBox(
                                           height: 10,
                                         ),
-                                        Text('180-180-1800'),
+                                        Text('+91-89-0808-5566'),
                                       ],
                                     ),
                                   ),
                                 ),
                                 Card(
                                   child: Padding(
-                                    padding: EdgeInsets.all(15),
+                                    padding: EdgeInsets.all(8),
                                     child: Column(
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
@@ -212,15 +225,14 @@ class _HelpscreenState extends State<Helpscreen> {
                                         ),
                                         GestureDetector(
                                           child: Text(
-                                            'http://www.zatri.com/',
+                                            'http://www.zatri.in',
                                             style: TextStyle(
                                                 decoration:
                                                     TextDecoration.underline,
                                                 color: Colors.blue),
                                           ),
                                           onTap: () async {
-                                            const url3 =
-                                                'http://www.zatri.com/';
+                                            const url3 = 'http://www.zatri.in/';
                                             if (await canLaunch(url3))
                                               launch(url3);
                                           },
@@ -236,89 +248,72 @@ class _HelpscreenState extends State<Helpscreen> {
                       ),
                     ),
                     Container(
-                      padding: const EdgeInsets.all(10.0),
-                      margin: const EdgeInsets.all(10.0),
+                      padding: const EdgeInsets.all(6.0),
+                      // margin: const EdgeInsets.all(6.0),
                       //color: Colors.greenAccent,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const Text(
-                            'Frequently asked questions',
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
+                      child: SingleChildScrollView(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const Text(
+                              'Frequently asked questions',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
-                          ),
-                          const SizedBox(
-                            height: 5.0,
-                          ),
-                          Container(
-                            padding: const EdgeInsets.all(10.0),
-                            //margin: EdgeInsets.all(10.0),
-                            //color: Colors.red,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              color: Colors.redAccent,
+                            const SizedBox(
+                              height: 5.0,
                             ),
-                            child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: const [
-                                  Text(
-                                    'How can i know the status of my bus?',
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 16,
+                            Container(
+                              padding: const EdgeInsets.all(10.0),
+                              //margin: EdgeInsets.all(10.0),
+                              //color: Colors.red,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                color: Colors.redAccent,
+                              ),
+                              child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: const [
+                                    Text(
+                                      'How can i know the status of my bus?',
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 16,
+                                      ),
                                     ),
-                                  ),
-                                  Text(
-                                    'Interdum et malesuada ac ante ipsum primis in faucibus. Quisque eu tortor sed leo condimentum maximus loremnon,sollicitudin risus. Mauris dapibus ipsum id tellus sodales,ut viverra metus eleifend.',
-                                    style: TextStyle(color: Colors.white),
-                                  ),
-                                ]),
-                          ),
-                          const ExpansionTile(
-                              title: Text('How can I find my bus?')),
-                          const SizedBox(
-                            height: 10,
-                            width: double.infinity,
-                            child: Divider(
-                              color: Colors.black12,
+                                    Text(
+                                      'Interdum et malesuada ac ante ipsum primis in faucibus. Quisque eu tortor sed leo condimentum maximus loremnon,sollicitudin risus. Mauris dapibus ipsum id tellus sodales,ut viverra metus eleifend.',
+                                      style: TextStyle(color: Colors.white),
+                                    ),
+                                  ]),
                             ),
-                          ),
-                          ExpansionTile(title: Text('How can I find my bus?')),
-                          const SizedBox(
-                            height: 10,
-                            width: double.infinity,
-                            child: Divider(
-                              color: Colors.black12,
-                            ),
-                          ),
-                          ExpansionTile(title: Text('How can I find my bus?')),
-                          const SizedBox(
-                            height: 10,
-                            width: double.infinity,
-                            child: Divider(
-                              color: Colors.black12,
-                            ),
-                          ),
-                          ExpansionTile(title: Text('How can I find my bus?')),
-                          const SizedBox(
-                            height: 10,
-                            width: double.infinity,
-                            child: Divider(
-                              color: Colors.black12,
-                            ),
-                          ),
-                          ExpansionTile(title: Text('How can I find my bus?')),
-                          const SizedBox(
-                            height: 10,
-                            width: double.infinity,
-                            child: Divider(
-                              color: Colors.black12,
-                            ),
-                          ),
-                          //ExpansionTile(title: Text('How can I find my bus?')),
-                        ],
+                            ListView.builder(
+                                shrinkWrap: true,
+                                itemCount: questions.length,
+                                itemBuilder: (context, index) {
+                                  return ExpansionTile(
+                                    title: Text(questions[index]),
+                                    children: [
+                                      Container(
+                                        padding: const EdgeInsets.all(8.0),
+                                        //margin: EdgeInsets.all(10.0),
+                                        //color: Colors.red,
+                                        decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                          color: Colors.redAccent,
+                                        ),
+                                        child: Text(answers[index],
+                                            style:
+                                                TextStyle(color: Colors.white)),
+                                      )
+                                    ],
+                                  );
+                                }),
+                          ],
+                        ),
                       ),
                     ),
                   ]),
